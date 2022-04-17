@@ -1,0 +1,195 @@
+.reviews_wrapper {
+    width: 100%;
+    margin: 0 auto 200px;
+    background: url(./../img/element.png) calc(50% - 570px) 70% no-repeat;
+
+    .reviews {
+        @include size (96%, false, false, $max_width_content_small);
+        @include flex (false, center, column);
+        margin: auto;
+        background:
+            url(./../img/element_white.png) top -15px right -45px no-repeat,
+            linear-gradient(45deg, #5A98F2 0%, #67C3F3 100%);
+
+        padding: 70px 0;
+        border-radius: 24px;
+        color: white;
+
+        h2 {
+            color: white;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        hr {
+            margin: 40px auto;
+            background-color: white;
+        }
+
+        .reviews_slider {
+            @include size (100%, false, false, false); // height will calculate by js
+            position: relative;
+            overflow: hidden;
+
+            .slider_item {
+                @include size (100%, false, false, false);
+                @include flex (center, center, false);
+                padding: 0 120px;
+                position: absolute;
+                transition: transform 1s;
+
+                .customer_info {
+                    width: 50%;
+                    @include flex (false, center, false);
+                    align-self: start;
+
+                    .customer_photo {
+                        @include flex (center, false, false);
+
+                        img {
+                            border-radius: 50%;
+                            border: 4px solid white;
+                            width: auto;
+                            height: 140px;
+                        }
+
+                        @media screen and (max-width: $tablet_big) {
+                            img {
+                                height: 100px;
+                            }
+                        }
+
+                        @media screen and (max-width: $tablet_small) {
+                            img {
+                                height: 70px;
+                                border: 2px solid white;
+                            }
+                        }
+                    }
+
+                    .customer_description {
+                        @include flex (center, false, column);
+                        margin-left: 30px;
+
+                        .customer_name {
+                            font-weight: bold;
+                            font-size: 22px;
+                        }
+
+                        .customer_position {
+                            font-size: 18px;
+                            margin-top: 20px;
+
+                            @media screen and (max-width: $tablet_big) {
+                                text-align: center;
+                            }
+
+                            @media screen and (max-width: $mobile_big) {
+                                margin-top: 5px;
+                            }
+                        }
+
+                        @media screen and (max-width: $tablet_big) {
+                            margin: 20px 0;
+                        }
+                    }
+
+                    @media screen and (max-width: $tablet_big) {
+                        flex-direction: column;
+                    }
+
+                    @media screen and (max-width: $tablet_small) {
+                        width: 100%;
+                    }
+                }
+
+                .customer_review {
+                    @include flex (false, center, false);
+                    width: 50%;
+                    font-size: 20px;
+                    line-height: 30px;
+                    font-style: italic;
+
+                    @media screen and (max-width: $tablet_small) {
+                        width: 100%;
+                        margin-top: 50px;
+                    }
+
+                    @media screen and (max-width: $mobile_big) {
+                        margin-top: 20px;
+                    }
+                }
+
+                @media screen and (max-width: $tablet_big) {
+                    padding: 0 50px;
+                }
+
+                @media screen and (max-width: $tablet_small) {
+                    flex-direction: column;
+                }
+
+                @media screen and (max-width: $mobile_big) {
+                    padding: 0 20px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $tablet_small) {
+            background:
+                url(./../img/element_white.png) top -65px right 15px no-repeat,
+                linear-gradient(45deg, #5A98F2 0%, #67C3F3 100%);
+        }
+
+        @media screen and (max-width: $mobile_big) {
+            width: 90%;
+        }
+    }
+
+    .reviews_slider_navigation {
+        @include size (96%, false, false, $max_width_content_small);
+        @include flex (center, false, false);
+        margin: 40px auto 0;
+
+        .button_right,
+        .button_left {
+            @include size (60px, 40px, false, false);
+            @include flex (center, center, false);
+            cursor: pointer;
+
+            & svg {
+                @include size (32px, 20px, false, false);
+                fill: $color_main;
+            }
+        }
+
+        .bullets {
+            @include flex (center, center, false);
+            margin: 0 70px;
+
+            .bullet_item {
+                @include size (10px, 10px, false, false);
+                border-radius: 50%;
+                background-color: $color_main;
+                opacity: 30%;
+                margin: 0 10px;
+
+                @media screen and (max-width: $mobile_big) {
+                    @include size (7px, 7px, false, false);
+                    margin: 0 5px;
+                }
+            }
+
+            .bullet_item_active {
+                opacity: 100%;
+            }
+
+            @media screen and (max-width: $mobile_big) {
+                margin: 0 20px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $desktop_small) {
+        background-position: left 10px top 70%;
+    }
+}

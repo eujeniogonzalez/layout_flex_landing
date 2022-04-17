@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+hr {
+    width: 56px;
+    height: 2px;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: $color_link;
+}
+
+.button {
+    width: 200px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: 1.4px solid $color-main;
+    border-radius: 50px;
+    cursor: pointer;
+
+    span {
+        margin-left: 17px;
+        padding-bottom: 5px;
+    }
+}
+
+.button_fill {
+    background-color: $color-main;
+    color: #ffffff;
+}
+
+.button_transperent {
+    background-color: #ffffff;
+    color: $color-main;
+}

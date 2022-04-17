@@ -1,0 +1,89 @@
+.offer_wrapper {
+    @include size (100%, false, false, false);
+    background: url(./../img/element.png) calc(50% - 780px) 0 no-repeat;
+    margin: 0 auto 200px auto;
+
+    .offer {
+        @include size (100%, false, false, $max_width_content_big);
+        @include flex (space-between, false, false);
+        margin: auto;
+
+        .offer_content {
+            width: 40%;
+            padding: 100px 80px 0 0;
+
+            h1 {
+                margin-bottom: 30px;
+            }
+
+            .offer_text {
+                margin-bottom: 60px;
+                font-size: 21px;
+                line-height: 32px;
+                color: $color_text;
+            }
+
+            @media screen and (max-width: $desktop_small) {
+                width: 50%;
+
+                h1 {
+                    font-size: 40px;
+                }
+            }
+
+            @media screen and (max-width: $tablet_small) {
+                width: 100%;
+                padding: 100px 0 0;
+                order: 2;
+
+                .offer_button {
+                    @include flex (center, false, false);   
+                }
+            }
+        }
+
+        .offer_img {
+            @include flex (center, false, false);
+            align-self: center;
+            width: 60%;
+
+            img {
+                width: 100%;
+            }
+
+            @media screen and (max-width: $desktop_small) {
+                width: 50%;
+            }
+
+            @media screen and (max-width: $tablet_small) {
+                width: 100%;
+                order: 1;
+                align-self: center;
+
+                img {
+                    width: 70%;
+                }
+            }
+
+            @media screen and (max-width: $mobile_big) {
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media screen and (max-width: $tablet_small) {
+            @include flex (false, center, column);
+        }
+    }
+
+    @media screen and (max-width: $desktop_small) {
+        width: 96%;
+        background: none;
+    }
+
+    @media screen and (max-width: $mobile_big) {
+        width: 90%;
+    }
+}

@@ -1,0 +1,120 @@
+.oportunities_wrapper {
+    width: 100%;
+    margin: 0 auto 200px;
+    background: url(./../img/element.png) calc(50% + 700px) 45% no-repeat;
+
+    .oportunities {
+        @include size (96%, false, false, $max_width_content_small);
+        margin: auto;
+
+        .oportunity {
+            @include flex (space-between, false, false);
+
+            .oportunity_image {
+                @include flex (center, false, false);
+                align-self: flex-start;
+                width: 55%;
+
+                img {
+                    width: 100%;
+                }
+
+                @media screen and (max-width: $tablet_small) {
+                    width: 100%;
+                    margin-bottom: 50px;
+
+                    img {
+                        width: 70%;
+                    }
+                }
+
+                @media screen and (max-width: $mobile_big) {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .oportunity_content {
+                width: 45%;
+
+                hr {
+                    margin: 30px auto 30px 0;
+                }
+
+                .oportunity_content_description {
+                    color: $color_text;
+                    font-size: 18px;
+                    line-height: 30px;
+                    margin-bottom: 40px;
+                }
+
+                @media screen and (max-width: $tablet_small) {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: $tablet_small) {
+                @include flex (false, center, column);
+
+                .oportunity_content_button {
+                    @include flex (center, false, false);   
+                }
+            }
+        }
+
+        .oportunity_direct {
+            .oportunity_content {
+                padding-left: 50px;
+
+                @media screen and (max-width: $tablet_small) {
+                    padding: 0;
+                }
+            }
+        }
+
+        .oportunity_revers {
+            flex-direction: row-reverse;
+
+            .oportunity_content {
+                padding-right: 50px;
+
+                @media screen and (max-width: $tablet_small) {
+                    padding: 0;
+                }
+            }
+
+            @media screen and (max-width: $tablet_small) {
+                flex-direction: column;
+            }
+        }
+
+        & > div + div {
+            margin-top: 200px;
+        }
+
+        @media screen and (max-width: $mobile_big) {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: $desktop_small) {
+        background-position: calc(50% + 600px) 45%;
+    }
+
+    @media screen and (max-width: $tablet_big) {
+        background-position: calc(50% + 450px) 45%;
+    }
+
+    @media screen and (max-width: $tablet_small) {
+        background-position: calc(50% + 350px) 50%;
+    }
+
+    @media screen and (max-width: $mobile_big) {
+        background-position: calc(50% + 220px) 50%;
+    }
+
+    @media screen and (max-width: $mobile_small) {
+        background-position: calc(50% + 150px) 53%;
+    }
+}

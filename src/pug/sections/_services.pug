@@ -1,0 +1,47 @@
+mixin service_item(img_src, title, description)
+    .service_item
+        .item_img
+            img(src = img_src, alt = title)
+        h3= title
+        .item_description= description
+
+section.services_wrapper 
+    .services 
+        h2 Our services
+
+        hr
+
+        .services_description We provide to you the best choiches for you. Adjust it to your health needs and make sure your undergo treatment with our highly qualified doctors you can consult with us which type of service is suitable for your health
+
+        .services_items
+            +service_item(
+                'img/search_doctor.png',
+                'Search doctor',
+                'Choose your doctor from thousands of specialist, general, and trusted hospitals')
+
+            +service_item(
+                'img/online_pharmacy.png',
+                'Online pharmacy',
+                'Buy  your medicines with our mobile application with a simple delivery system')
+
+            +service_item(
+                'img/consultation.png',
+                'Consultation',
+                'Free consultation with our trusted doctors and get the best recomendations')
+
+            +service_item(
+                'img/details_info.png',
+                'Details info',
+                'Free consultation with our trusted doctors and get the best recomendations')
+
+            +service_item(
+                'img/emergency_care.png',
+                'Emergency care',
+                'You can get 24/7 urgent care for yourself or your children and your lovely family')
+
+            +service_item(
+                'img/tracking.png',
+                'Tracking',
+                'Track and save your medical history and health data ')
+        
+        +button('Learn more', 'button_transperent')

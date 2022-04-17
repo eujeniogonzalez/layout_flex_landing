@@ -1,0 +1,44 @@
+mixin article_item(img_src, img_alt, title, description, article_url)
+    .article_item
+        .article_item_img
+            img(src = img_src, alt = img_alt)
+        
+        .article_item_content
+            h3= title 
+            .article_description= description
+            a(href = article_url) 
+                | Read more
+                svg(width='15' height='9')
+                    use(xlink:href='#article_arrow_right')
+
+section.articles_wrapper
+    .articles 
+        h2 Check out our latest article
+        hr
+        .articles_items
+            +article_item(
+                'img/disease_detection_check_up_in_the_laboratory.png',
+                'Disease detection, check up in the laboratory',
+                'Disease detection, check up in the laboratory',
+                'In this case, the role of the health laboratory is very important to do a disease detection...',
+                '/#')
+
+            +article_item(
+                'img/herbal_medicines_that_are_safe_for_consumption.png',
+                'Herbal medicines that are safe for consumption',
+                'Herbal medicines that are safe for consumption',
+                'Herbal medicine is very widely used at this time because of its very good for your health...',
+                '/#')
+            
+            +article_item(
+                'img/natural_care_for_healthy_facial_skin.png',
+                'Natural care for healthy facial skin',
+                'Natural care for healthy facial skin',
+                'A healthy lifestyle should start from now and also for your skin health. There are some...',
+                '/#')
+
+        +button('View all', 'button_transperent')
+
+svg(width='0' height='0' style='position:absolute;')
+    symbol(id='article_arrow_right')
+        path(d='M1.37501 5.30357L11.9822 5.30357L9.65179 7.63393C9.33037 7.95536 9.33037 8.4375 9.65179 8.75893C9.97322 9.08036 10.4554 9.08036 10.7768 8.75893L14.4732 5.0625C14.7947 4.74107 14.7947 4.25893 14.4732 3.9375L10.7768 0.241071C10.4554 -0.0803579 9.97322 -0.080358 9.65179 0.241071C9.33037 0.5625 9.33037 1.04464 9.65179 1.36607L11.9822 3.69643L1.37501 3.69643C0.973222 3.69643 0.571436 4.01786 0.571436 4.5C0.571436 4.98214 0.973222 5.30357 1.37501 5.30357Z' fill='#4089ED')

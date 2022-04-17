@@ -1,0 +1,29 @@
+mixin oportunity(direction = '', img_src, img_alt, title, description, button_text, button_fill)
+    .oportunity(class = direction)
+        .oportunity_image
+            img(src = img_src, alt = img_alt)
+        .oportunity_content 
+            h2= title
+            hr
+            .oportunity_content_description= description
+            .oportunity_content_button
+                +button(button_text, button_fill)
+
+section.oportunities_wrapper
+    .oportunities
+        +oportunity(
+            'oportunity_direct',
+            'img/leading_healthcare_providers.png',
+            'Leading healthcare providers',
+            'Leading healthcare providers',
+            'Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone. To us, it’s not just work. We take pride in the solutions we deliver',
+            'Learn more',
+            'button_transperent')
+        +oportunity(
+            'oportunity_revers',
+            'img/download_our_mobile_app.png',
+            'Download our mobile app',
+            'Download our mobile app',
+            'Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely',
+            'Download <span>&darr;</span>',
+            'button_transperent')

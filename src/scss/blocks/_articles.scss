@@ -1,0 +1,95 @@
+.articles_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    background:
+        url(./../img/element.png) calc(50% - 550px) 13% no-repeat,
+        url(./../img/element.png) calc(50% + 680px) 105% no-repeat,
+        url(./../img/bg_element_pear_rotated.png) calc(50% + 700px) 0 no-repeat;
+
+    .articles {
+        @include size (96%, false, false, $max_width_content_small);
+        @include flex (false, center, column);
+        margin: auto;
+
+        h2 {
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        hr {
+            margin: 40px auto 80px auto;
+        }
+
+        .articles_items {
+            @include flex (space-between, false, false);
+            width: 100%;
+            margin-bottom: 70px;
+
+            .article_item {
+                width: 32%;
+                border-radius: 20px;
+                overflow: hidden;
+                background-color: #ffffff;
+                box-shadow: 10px 20px 20px rgba(0,0,0,0.05);
+
+                .article_item_img {
+
+                    img {
+                        width: 100%;
+                        display:block;
+                    }
+                }
+
+                .article_item_content {
+                    @include flex (false, false, column);
+                    margin: 30px 30px 40px 30px;
+
+                    h3 {
+                        margin-bottom: 30px;
+                    }
+
+                    .article_description {
+                        color: $color_text;
+                        line-height: 30px;
+                        margin-bottom: 40px;
+                    }
+
+                    a {
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+
+                @media screen and (max-width: $tablet_small) {
+                    @include size (100%, false, false, 350px);
+                }
+            }
+
+            @media screen and (max-width: $tablet_small) {
+                flex-direction: column;
+                align-items: center;
+
+                div + div {
+                    margin-top: 50px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $mobile_big) {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: $desktop_small) {
+        background-position: calc(50% - 450px) 13%, calc(50% + 480px) 105%, calc(50% + 500px) 0;
+    }
+
+    @media screen and (max-width: $tablet_big) {
+        background-position: calc(50% - 400px) 13%, calc(50% + 380px) 105%, calc(50% + 400px) 0;
+    }
+
+    @media screen and (max-width: $tablet_small) {
+        background-position: calc(50% - 200px) 6%, calc(50% + 180px) 102%, calc(50% + 100px) 30%;
+    }
+}

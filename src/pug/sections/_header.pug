@@ -1,0 +1,23 @@
+header
+    .header_logo
+        a(href="#") 
+            .header_logo_icon
+                svg
+                    use(xlink:href="#logo_icon")
+
+            .header_logo_text Trafalgar
+
+    nav.header_nav
+        .header_nav_items
+            a.header_nav_item_active(href="#") Home
+            a(href="#") Find a doctor
+            a(href="#") Apps
+            a(href="#") Testimonials
+            a(href="#") About us
+
+        button.header_nav_button
+
+svg(width="0" height="0" style="display:none;")
+    symbol(id='logo_icon')
+        circle(cx='20.5' cy='20.5' r='20.5' fill="#458FF6")
+        path(d='M19.344 15.244H13.312V12.488H28.782V15.244H22.724V31H19.344V15.244Z' fill="white")

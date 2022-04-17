@@ -1,0 +1,75 @@
+header {
+	@include size (96%, 150px, false, $max_width_content_big);
+	@include flex (space-between, center, false);
+	margin: 0 auto;
+
+	.header_logo a {
+		@include flex (false, center, false);
+		text-decoration: none;
+		
+		.header_logo_icon {
+			margin-right: 12px;
+			
+			svg {@include size (41px, 41px, false, false)}
+		}
+
+		.header_logo_text {
+			font-weight: bold;
+			font-size: 24px;
+			color: $color_logo_text;
+		}
+	}
+
+	.header_nav {
+		@include flex (false, center, false);
+		position: relative;
+
+		.header_nav_items {
+
+			a {
+				text-decoration: none;
+				color: $color_header_nav_link;
+				font-size: 18px;
+				opacity: 0.5;
+				padding: 20px;
+			}
+			
+			a + a {
+				margin-left: 40px;
+			}
+
+			.header_nav_item_active {
+				font-weight: bold;
+				opacity: 1;
+			}
+
+			@media screen and (max-width: $tablet_big) {
+				display: none;
+				position: absolute;
+				top: 61px;
+				right: 0;
+				width: 250px;
+				border-radius: 20px;
+				padding: 20px;
+				border: 1px solid #cccccc;
+				box-shadow: 10px 20px 20px rgba(0,0,0,0.05);
+				background-color: white;
+
+				a {	display: block;	}
+
+				a + a {	margin-left: 0;	}
+			}
+		}
+		.header_nav_button {
+			@include size (41px, 41px, false, false);
+			display: none;
+			cursor: pointer;
+			border: none;
+			background: url('./../img/header_nav_button.svg') center center no-repeat;
+
+			@media screen and (max-width: $tablet_big) {display: block;}
+		}
+	}
+
+	@media screen and (max-width: $mobile_big) {width: 90%;}
+}
